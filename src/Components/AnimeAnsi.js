@@ -1,7 +1,7 @@
 import React from 'react'
 
 export const AnimeAnsi = (props) => {
-    const {title,images:{jpg:{large_image_url}},source,rank,score,popularity,members,status,rating,duration,episodes}=props.animeAnsi
+    const {title,images:{jpg:{large_image_url}},source,rank,score,popularity,members,status,rating,duration,episodes,year}=props.animeAnsi
     return (
       <>
         <div className='anime-content'>
@@ -17,6 +17,7 @@ export const AnimeAnsi = (props) => {
                 <h4>#status: {status}</h4>
                 <h4>#Rating: {rating}</h4>
                 <h4>Episodes: {episodes}</h4>
+                <h4>Year: {year}</h4>
           </div>
         </div>
       </>
