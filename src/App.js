@@ -102,44 +102,48 @@ function App() {
         </div>
       </div>
 
-      <Routes>
-        <Route exact path="/" element={
-          <div className="container">
-            <div className="animeInfo">
-              {animeAnsi && <AnimeAnsi animeAnsi={animeAnsi} />}
-            </div>
-            <div className="anime-row">
-              <h2 className="text-heading">Anime</h2>
-              <div className="row">
-                <AnimeList
-                  AnimeList={animeData}
-                  setAnimeInfo={setAnimeInfo}
-                  animeComponent={AddToList}
-                  handleList={(anime) => addTo(anime)}
-                />
+      <div className="main-content">
+        <Routes>
+          <Route exact path="/" element={
+            <div className="container">
+              <div className="animeInfo">
+                {animeAnsi && <AnimeAnsi animeAnsi={animeAnsi} />}
               </div>
-              <Pagination
-                pageCount={pageCount}
-                onPageChange={handlePageClick}
-                currentPage={currentPage}
-              />
-              <h2 className="text-heading">My-List</h2>
-              <div className="row"> 
-                <AnimeList
-                  AnimeList={myAnimeList}
-                  setAnimeInfo={setAnimeInfo}
-                  animeComponent={RemoveFromList}
-                  handleList={(anime) => removeFrom(anime)}
-                />
+              <div className="anime-row">
+                <h2 className="text-heading">Animes Recetes</h2>
+                <div className="row">
+                  <AnimeList
+                    AnimeList={animeData}
+                    setAnimeInfo={setAnimeInfo}
+                    animeComponent={AddToList}
+                    handleList={(anime) => addTo(anime)}
+                  />
+                  <div className="pagination-left">
+                    <Pagination
+                      pageCount={pageCount}
+                      onPageChange={handlePageClick}
+                      currentPage={currentPage}
+                    />
+                  </div>
+                </div>
+                <h2 className="text-heading">My-List</h2>
+                <div className="row">
+                  <AnimeList
+                    AnimeList={myAnimeList}
+                    setAnimeInfo={setAnimeInfo}
+                    animeComponent={RemoveFromList}
+                    handleList={(anime) => removeFrom(anime)}
+                  />
+                </div>
               </div>
             </div>
-          </div>
-        } />
-        {/* <Route path="/anime-list" element={<AnimeListPage />} />
-        <Route path="/new-season" element={<NewSeason />} />
-        <Route path="/movies" element={<Movies />} />
-        <Route path="/popular" element={<Popular />} /> */}
-      </Routes>
+          } />
+          {/* <Route path="/anime-list" element={<AnimeListPage />} />
+          <Route path="/new-season" element={<NewSeason />} />
+          <Route path="/movies" element={<Movies />} />
+          <Route path="/popular" element={<Popular />} /> */}
+        </Routes>
+      </div>
     </Router>
   );
 }
