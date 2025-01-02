@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import './Components/style.css';
 import logo from './imgs/My_List_Animes.png';
 import { AnimeList } from "./Components/AnimeList";
-import { AnimeAnsi } from "./Components/AnimeAnsi";
 import { AddToList } from "./Components/AddToList";
 import { RemoveFromList } from "./Components/RemoveFromList";
 import { Pagination } from "./Components/Pagination";
@@ -16,7 +15,6 @@ function App() {
   const [search, setSearch] = useState('One Piece');
   const [searchTerm, setSearchTerm] = useState('One Piece');
   const [animeData, setAnimeData] = useState([]);
-  const [animeAnsi, setAnimeInfo] = useState();
   const [myAnimeList, setMyAnimeList] = useState(() => {
     const savedList = localStorage.getItem('myAnimeList');
     return savedList ? JSON.parse(savedList) : [];
@@ -101,28 +99,27 @@ function App() {
           </button>
         </div>
       </div>
-
       <div className="main-content">
         <Routes>
           <Route exact path="/" element={
             <div className="container">
-              <div className="animeInfo">
-                {animeAnsi && <AnimeAnsi animeAnsi={animeAnsi} />}
-              </div>
               <div className="anime-row">
-                <h2 className="text-heading">Animes Recetes</h2>
-                <div className="row">
-                  <AnimeList
-                    AnimeList={animeData}
-                    setAnimeInfo={setAnimeInfo}
-                    animeComponent={AddToList}
-                    handleList={(anime) => addTo(anime)}
-                  />
-                  <div className="pagination-left">
+                <div className="anime-info-cima">
+                  <div className="pagination">
                     <Pagination
                       pageCount={pageCount}
                       onPageChange={handlePageClick}
                       currentPage={currentPage}
+                    />
+                  </div>
+                  <h2 className="text-heading">Animes Recentes</h2>
+                </div>
+                <div className="anime-content">
+                  <div className="anime-list">
+                    <AnimeList
+                      AnimeList={animeData}
+                      animeComponent={AddToList}
+                      handleList={(anime) => addTo(anime)}
                     />
                   </div>
                 </div>
@@ -130,7 +127,6 @@ function App() {
                 <div className="row">
                   <AnimeList
                     AnimeList={myAnimeList}
-                    setAnimeInfo={setAnimeInfo}
                     animeComponent={RemoveFromList}
                     handleList={(anime) => removeFrom(anime)}
                   />
