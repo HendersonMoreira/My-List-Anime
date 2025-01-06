@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #4e4e4e;
+    background-color: #000000;
 }
 
 .header {
@@ -30,7 +30,7 @@ body {
 }
 
 .container {
-    width: 100%;
+    width: 90%;
     margin: 100px auto;
     align-items: center;
     display: flex;
@@ -38,11 +38,11 @@ body {
 }
 
 .anime-row {
-    width: 100%;
+    width: 50%;
     font-size: 8px;
+    border: 1px solid #f0f0f0;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
 }
 
 .anime-row .row {
@@ -50,12 +50,13 @@ body {
     flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
     gap: 10px; /* Reduzido o espaçamento */
     margin-left: 20rem;
+    justify-content: center;
 }
 
 .anime-row .text-heading {
     margin-left: 20rem;
-    margin-top: 1rem;
-    font-size: 10px;
+    margin-top: auto;
+    font-size: 12px;
 }
 
 .card {
@@ -65,12 +66,13 @@ body {
     overflow: hidden;
     position: relative;
     color: white;
-    margin: 0.3rem; /* Ajuste o espaçamento */
+    margin: 0.7rem; /* Ajuste o espaçamento */
 }
 
 .card img {
     width: 100%; /* Ajuste para cobrir toda a área */
-    height: auto; /* Mantém a proporção */
+    height: 220px; /* Mantém a proporção */
+    object-fit: cover;
 }
 
 .anime-content {
