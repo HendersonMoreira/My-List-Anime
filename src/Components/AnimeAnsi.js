@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 export const AnimeAnsi = (props) => {
-    const {title,images:{jpg:{large_image_url}},source,rank,score,popularity,members,status,rating,duration,episodes,year}=props.animeAnsi
+    const {title, images: {jpg: {large_image_url}}, source, rank, score, popularity, members, status, rating, duration, episodes, year} = props.animeAnsi;
     return (
       <>
         <div className='anime-content'>
@@ -12,14 +12,14 @@ export const AnimeAnsi = (props) => {
                 <h3>#Score: {score}</h3>
                 <h3>#Popularity: {popularity}</h3><hr/><br/>
                 <h4>#Members: {members}</h4>
-                <h4>#source: {source}</h4>
+                <h4>#Source: {source}</h4>
                 <h4>#Duration: {duration}</h4>
-                <h4>#status: {status}</h4>
+                <h4>#Status: {status}</h4>
                 <h4>#Rating: {rating}</h4>
-                <h4>Episodes: {episodes}</h4>
-                <h4>Year: {year}</h4>
+                <h4>#Episodes: {episodes}</h4>
+                <h4>#Year: {year}</h4>
           </div>
         </div>
       </>
-  )
+  );
 }

@@ -122,8 +122,8 @@ function App() {
                       handleList={(anime) => addTo(anime)}
                     />
                   </div>
+                  
                 </div>
-                <h2 className="text-heading">My-List</h2>
                 <div className="row">
                   <AnimeList
                     AnimeList={myAnimeList}
